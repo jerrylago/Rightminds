@@ -24,7 +24,7 @@ class QuestionTableViewController: UITableViewController {
     
     var score: Int = 0 {
         didSet {
-            scoreLabel.text = "\(score)"
+            scoreLabel.text = "Score: \(score)"
         }
     }
     
@@ -76,7 +76,7 @@ class QuestionTableViewController: UITableViewController {
     
     func setUpLabel(label: UILabel) {
         
-        label.text = "0"
+        label.text = "Score: 0"
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -104,12 +104,7 @@ class QuestionTableViewController: UITableViewController {
     }
     
     @objc func updateScore() {
-        for question in questionsList {
-            if question.selectedAnswerIndex == question.correctAnswerIndex {
-                score += 1
-            }
-        }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score: \(score)", style: .plain, target: nil, action: Selector(("updateScore")))
+        
     }
     
 }
@@ -143,11 +138,25 @@ extension QuestionTableViewController {
     // Decides whether to push next question table view or results view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Pushes next question
+        
         if questionIndex < questionsList.count - 1 {
             
             let questionTableViewController = QuestionTableViewController()
+            print("Index Path: \(indexPath.row)")
+            
+            if indexPath.row == questionsList[questionIndex].correctAnswerIndex {
+                questionTableViewController.score = score + 1
+                // score += 1
+            }
+            // questionIndex += 1
+            // nameLabel.text = questionsList[questionIndex].questionString
+            
+            // Update 4 choices
+            
+            
+            
             questionTableViewController.questionIndex = questionIndex + 1
-            navigationController?.pushViewController(questionTableViewController, animated: true)
+            navigationController?.pushViewController(questionTableViewController, animated: false)
         
         // Pushes results view controller
         } else {
