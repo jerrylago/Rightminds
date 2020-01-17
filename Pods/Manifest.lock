@@ -270,11 +270,13 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Database
   - Firebase/Firestore
+  - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
   trunk:
@@ -297,6 +299,7 @@ SPEC REPOS:
     - gRPC-Core
     - leveldb-library
     - nanopb
+    - SnapKit
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -318,7 +321,8 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 5f68c7a9d05f82ced66cc03d649da31f1395b769
+PODFILE CHECKSUM: 92900c49aff913a80da822260b2640d208f88ca7
 
 COCOAPODS: 1.8.4

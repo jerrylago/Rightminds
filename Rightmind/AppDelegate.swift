@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        
-        
         coloredNavBarAppearance.configureWithOpaqueBackground()
         coloredNavBarAppearance.backgroundColor = background_color
         coloredNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -28,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.barTintColor = UIColor.white
         UINavigationBar.appearance().standardAppearance = coloredNavBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredNavBarAppearance
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         FirebaseApp.configure()
         return true
     }

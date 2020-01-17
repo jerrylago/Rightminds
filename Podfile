@@ -10,4 +10,5 @@ target 'Rightmind' do
 	pod 'Firebase/Analytics'
 	pod 'Firebase/Firestore'
   	pod 'Firebase/Database'
+	pod 'SnapKit', '~> 5.0.0'
 end

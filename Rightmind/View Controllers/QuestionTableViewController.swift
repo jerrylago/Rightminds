@@ -12,17 +12,66 @@
 //
 
 import UIKit
+import SnapKit
 
 class QuestionTableViewController: UITableViewController {
     
     let cellId = "cellId"
     var timer = Timer()
-    var score = 0
+    let scoreLabel = UILabel()
+    
+    var score: Int = 0 {
+        didSet {
+            scoreLabel.text = "\(score)"
+        }
+    }
     
     // Instantiates question and sets questionIndex to 0 to be used below
     var questionIndex = 0
     var question: Question {
         return questionsList[questionIndex]
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpUI()
+    }
+    
+    func setUpUI() {
+        // Each question gets its own number for convenience to users
+        navigationItem.title = "Question \(questionIndex + 1) / \(questionsList.count)"
+        // Back button for users if they chose the wrong answer
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score: \(score)", style: .plain, target: nil, action: Selector(("updateScore")))
+        
+        setUpLabel(label: scoreLabel)
+        view.addSubview(scoreLabel)
+        tableView.register(AnswerCell.self, forCellReuseIdentifier: cellId)
+        
+        // Allocates space for question header
+        tableView.sectionHeaderHeight = 100
+        tableView.sectionFooterHeight = 100
+        
+        // Removes extra cell lines beneath question answers
+        tableView.tableFooterView = UIView()
+        setConstraints()
+    }
+    
+    func setUpLabel(label: UILabel) {
+        
+        label.text = "0"
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func setConstraints() {
+        scoreLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.view)
+            make.top.equalTo(self.view).offset(-400)
+            make.height.equalTo(100)
+            make.width.equalTo(200)
+        }
     }
     
     @objc func updateScore() {
@@ -34,28 +83,10 @@ class QuestionTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score: \(score)", style: .plain, target: nil, action: Selector(("updateScore")))
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Each question gets its own number for convenience to users
-        navigationItem.title = "Question \(questionIndex + 1) / \(questionsList.count)"
-        // Back button for users if they chose the wrong answer
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score \(score)", style: .plain, target: nil, action: Selector(("updateScore")))
-        
-        tableView.register(AnswerCell.self, forCellReuseIdentifier: cellId)
-        
-        // Allocates space for question header
-        tableView.sectionHeaderHeight = 100
-        tableView.sectionFooterHeight = 100
-        
-        // Removes extra cell lines beneath question answers
-        tableView.tableFooterView = UIView()
-        
-    }
-    
-    // MARK: - Table view data source
 }
+
+    // MARK: - Table view data source
+
 
 // Table View Delegate
 extension QuestionTableViewController {
@@ -86,6 +117,7 @@ extension QuestionTableViewController {
         
         let footerView = UIView()
         footerView.addSubview(timerLabel)
+        
         footerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":timerLabel]))
         footerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-12-[v0]-12-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":timerLabel]))
         
