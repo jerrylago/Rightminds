@@ -19,6 +19,8 @@ class QuestionTableViewController: UITableViewController {
     let cellId = "cellId"
     var timer = Timer()
     let scoreLabel = UILabel()
+    let nameLabel = UILabel()
+    let timerLabel = UILabel()
     
     var score: Int = 0 {
         didSet {
@@ -38,6 +40,10 @@ class QuestionTableViewController: UITableViewController {
     }
     
     func setUpUI() {
+        view.addSubview(nameLabel)
+        view.addSubview(timerLabel)
+        view.addSubview(scoreLabel)
+        
         // Each question gets its own number for convenience to users
         navigationItem.title = "Question \(questionIndex + 1) / \(questionsList.count)"
         // Back button for users if they chose the wrong answer
@@ -46,6 +52,16 @@ class QuestionTableViewController: UITableViewController {
         //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Score: \(score)", style: .plain, target: nil, action: Selector(("updateScore")))
         
         setUpLabel(label: scoreLabel)
+        
+        nameLabel.text = question.questionString
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        nameLabel.numberOfLines = 3
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        timerLabel.text = "Timer"
+        timerLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        timerLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(scoreLabel)
         tableView.register(AnswerCell.self, forCellReuseIdentifier: cellId)
         
@@ -66,10 +82,23 @@ class QuestionTableViewController: UITableViewController {
     }
     
     func setConstraints() {
+        
+        nameLabel.snp.makeConstraints { (make) in
+            make.top.left.equalTo(15)
+            make.width.equalTo(345)
+            make.height.equalTo(60)
+        }
+        
+        timerLabel.snp.makeConstraints { (make) in
+            make.centerX.centerY.equalTo(self.view)
+            make.width.equalTo(200)
+            make.height.equalTo(60)
+        }
+        
         scoreLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(self.view).offset(-400)
-            make.height.equalTo(100)
+            make.centerY.equalTo(self.view).offset(30)
+            make.height.equalTo(50)
             make.width.equalTo(200)
         }
     }
@@ -90,40 +119,7 @@ class QuestionTableViewController: UITableViewController {
 
 // Table View Delegate
 extension QuestionTableViewController {
-    
-    // Sets up question header for each section.
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        // Creates nameLabel with appropriate properties.
-        let nameLabel = UILabel()
-        nameLabel.text = question.questionString
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        nameLabel.numberOfLines = 0
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Creates headerView of nameLabel inside with appropriate constraints.
-        let headerView = UIView()
-        headerView.addSubview(nameLabel)
-        headerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":nameLabel]))
-        headerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-12-[v0]-12-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":nameLabel]))
-        
-        return headerView
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let timerLabel = UILabel()
-        timerLabel.text = "Timer"
-        timerLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        timerLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        let footerView = UIView()
-        footerView.addSubview(timerLabel)
-        
-        footerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":timerLabel]))
-        footerView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-12-[v0]-12-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":timerLabel]))
-        
-        return footerView
-    }
-    
+
     // Sets up question answers by inserting answer at each cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! AnswerCell
