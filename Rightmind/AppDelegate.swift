@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.barTintColor = UIColor.white
         UINavigationBar.appearance().standardAppearance = coloredNavBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredNavBarAppearance
-        
+        FirebaseApp.configure()
         return true
     }
 

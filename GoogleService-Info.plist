@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>53573619802-dbqlrikhohr40earhtortuo9nqmi6r60.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.53573619802-dbqlrikhohr40earhtortuo9nqmi6r60</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBP2jP59gNCB6t4JO-nrVWxK_p0ZuhEmkY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>53573619802</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.jerrylagore.Rightmind</string>
+	<key>PROJECT_ID</key>
+	<string>rightminds</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rightminds.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:53573619802:ios:d25c573032a322b5894863</string>
+	<key>DATABASE_URL</key>
+	<string>https://rightminds.firebaseio.com</string>
+</dict>
+</plist>

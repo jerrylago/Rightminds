@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560AA7C5C71C12B624FC15CC /* Pods_Rightmind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08D2EAF6282381B05F08092 /* Pods_Rightmind.framework */; };
 		DE05215222FB3BF6002BA7BF /* QuestionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05215122FB3BF6002BA7BF /* QuestionTableViewController.swift */; };
 		DE05215922FB47A6002BA7BF /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05215822FB47A6002BA7BF /* ResultsViewController.swift */; };
 		DE0C90DB22FA60E7003104CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C90DA22FA60E7003104CF /* AppDelegate.swift */; };
@@ -17,11 +18,15 @@
 		DE0C90F422FA6BAB003104CF /* BeginQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C90F322FA6BAB003104CF /* BeginQuizViewController.swift */; };
 		DE104F792309C804004BDC5B /* BeginVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE104F782309C804004BDC5B /* BeginVideoViewController.swift */; };
 		DE12461723BFDE6D004AE759 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE12461623BFDE6D004AE759 /* Launch Screen.storyboard */; };
+		DE1594A323D12FC200D6D952 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE1594A223D12FC200D6D952 /* GoogleService-Info.plist */; };
 		DE8F166523009CDC00127CCD /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F166423009CDC00127CCD /* AnswerCell.swift */; };
 		DE8F166C2300A33100127CCD /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8F166B2300A33100127CCD /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64EC144432DA9BDFDAB92913 /* Pods-Rightmind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rightmind.release.xcconfig"; path = "Target Support Files/Pods-Rightmind/Pods-Rightmind.release.xcconfig"; sourceTree = "<group>"; };
+		6DDC01ED6A7424B46B18D731 /* Pods-Rightmind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rightmind.debug.xcconfig"; path = "Target Support Files/Pods-Rightmind/Pods-Rightmind.debug.xcconfig"; sourceTree = "<group>"; };
+		D08D2EAF6282381B05F08092 /* Pods_Rightmind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rightmind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE05215122FB3BF6002BA7BF /* QuestionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewController.swift; sourceTree = "<group>"; };
 		DE05215822FB47A6002BA7BF /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		DE0C90D722FA60E7003104CF /* Rightmind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rightmind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +39,7 @@
 		DE0C90F322FA6BAB003104CF /* BeginQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginQuizViewController.swift; sourceTree = "<group>"; };
 		DE104F782309C804004BDC5B /* BeginVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginVideoViewController.swift; sourceTree = "<group>"; };
 		DE12461623BFDE6D004AE759 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DE1594A223D12FC200D6D952 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DE8F166423009CDC00127CCD /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		DE8F166B2300A33100127CCD /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				560AA7C5C71C12B624FC15CC /* Pods_Rightmind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0668FC442F140595FC99C2BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DDC01ED6A7424B46B18D731 /* Pods-Rightmind.debug.xcconfig */,
+				64EC144432DA9BDFDAB92913 /* Pods-Rightmind.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		62F6BA74BDF69F754540FD0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D08D2EAF6282381B05F08092 /* Pods_Rightmind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE0C90CE22FA60E7003104CF = {
 			isa = PBXGroup;
 			children = (
 				DE0C90D922FA60E7003104CF /* Rightmind */,
 				DE0C90D822FA60E7003104CF /* Products */,
+				0668FC442F140595FC99C2BF /* Pods */,
+				62F6BA74BDF69F754540FD0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +104,7 @@
 				DE0C90E122FA60E8003104CF /* Assets.xcassets */,
 				DE0C90E322FA60E8003104CF /* LaunchScreen.storyboard */,
 				DE0C90E622FA60E8003104CF /* Info.plist */,
+				DE1594A223D12FC200D6D952 /* GoogleService-Info.plist */,
 			);
 			path = Rightmind;
 			sourceTree = "<group>";
@@ -116,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE0C90E922FA60E8003104CF /* Build configuration list for PBXNativeTarget "Rightmind" */;
 			buildPhases = (
+				E83614E87C2CB1C26C703D44 /* [CP] Check Pods Manifest.lock */,
 				DE0C90D322FA60E7003104CF /* Sources */,
 				DE0C90D422FA60E7003104CF /* Frameworks */,
 				DE0C90D522FA60E7003104CF /* Resources */,
+				04B871CBB8ED91C0431A753B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,12 +199,55 @@
 			files = (
 				DE0C90E522FA60E8003104CF /* LaunchScreen.storyboard in Resources */,
 				DE0C90E222FA60E8003104CF /* Assets.xcassets in Resources */,
+				DE1594A323D12FC200D6D952 /* GoogleService-Info.plist in Resources */,
 				DE12461723BFDE6D004AE759 /* Launch Screen.storyboard in Resources */,
 				DE0C90E022FA60E7003104CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04B871CBB8ED91C0431A753B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rightmind/Pods-Rightmind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rightmind/Pods-Rightmind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rightmind/Pods-Rightmind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E83614E87C2CB1C26C703D44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rightmind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE0C90D322FA60E7003104CF /* Sources */ = {
@@ -332,6 +405,7 @@
 		};
 		DE0C90EA22FA60E8003104CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DDC01ED6A7424B46B18D731 /* Pods-Rightmind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -351,6 +425,7 @@
 		};
 		DE0C90EB22FA60E8003104CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64EC144432DA9BDFDAB92913 /* Pods-Rightmind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

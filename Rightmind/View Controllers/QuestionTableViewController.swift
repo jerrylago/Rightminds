@@ -55,11 +55,13 @@ class QuestionTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
+}
+
+// Table View Delegate
+extension QuestionTableViewController {
     
     // Sets up question header for each section.
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         // Creates nameLabel with appropriate properties.
         let nameLabel = UILabel()
         nameLabel.text = question.questionString
@@ -77,7 +79,6 @@ class QuestionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
         let timerLabel = UILabel()
         timerLabel.text = "Timer"
         timerLabel.font = UIFont.boldSystemFont(ofSize: 18)
@@ -90,13 +91,6 @@ class QuestionTableViewController: UITableViewController {
         
         return footerView
     }
-
-    
-    // Returns number of question answers per section
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return question.answers.count
-    }
     
     // Sets up question answers by inserting answer at each cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -108,9 +102,18 @@ class QuestionTableViewController: UITableViewController {
         return cell
     }
     
+    // Returns number of question answers per section
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return question.answers.count
+    }
+    
+}
+
+// Table View Data Source
+extension QuestionTableViewController {
+    
     // Decides whether to push next question table view or results view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         // Pushes next question
         if questionIndex < questionsList.count - 1 {
             
