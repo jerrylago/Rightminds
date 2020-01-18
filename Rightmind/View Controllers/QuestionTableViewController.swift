@@ -132,6 +132,17 @@ extension QuestionTableViewController {
     
 }
 
+//func goToQuestion(at position: Int) {
+//  state.currentQuestion = position
+//  
+//  lblQuestion.text = state.question.title
+//  navigationItem.title = "SnappyQuiz \(position)/\(state.numberOfQuestions)"
+//  
+//  let progress = Double(position) / Double(state.numberOfQuestions)
+//  updateProgress(to: progress)
+//  startCountdown()
+//}
+
 // Table View Data Source
 extension QuestionTableViewController {
     

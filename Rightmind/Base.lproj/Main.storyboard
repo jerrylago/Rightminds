@@ -29,7 +29,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Begin Quiz"/>
                                         <connections>
-                                            <segue destination="Xw6-Du-nYO" kind="show" id="lAg-0o-MIU"/>
+                                            <action selector="beginQuizTapped:" destination="PLC-Yn-cec" eventType="touchUpInside" id="3E4-oR-3Tf"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -16,6 +16,11 @@ class BeginQuizViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func beginQuizTapped(_ sender: Any) {
+        let vc = QuizViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
     /*
     // MARK: - Navigation
