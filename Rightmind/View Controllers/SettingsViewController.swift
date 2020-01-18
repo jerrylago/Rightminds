@@ -1,24 +1,19 @@
 //
-//  BeginQuizViewController.swift
+//  SettingsViewController.swift
 //  Rightmind
 //
-//  Created by Jerry LaGore on 8/6/19.
-//  Copyright © 2019 Jerry LaGore. All rights reserved.
+//  Created by Jerry LaGore on 1/18/20.
+//  Copyright © 2020 Jerry LaGore. All rights reserved.
 //
 
 import UIKit
 
-class BeginQuizViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .purple
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func beginQuizTapped(_ sender: Any) {
-        let vc = QuizViewController()
-        navigationController?.pushViewController(vc, animated: true)
     }
     
 

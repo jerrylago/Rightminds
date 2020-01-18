@@ -42,7 +42,7 @@ class ResultsViewController: UIViewController {
     
     // Action for done bar button item. Pops to begin quiz screen.
     @objc func done() {
-        navigationController?.popToViewController(ofClass: BeginQuizViewController.self, animated: true)
+        //navigationController?.popToViewController(ofClass: BeginQuizViewController.self, animated: true)
     }
     
     // Action for restart bar button item. Pops to first question in quiz.

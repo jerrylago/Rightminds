@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        let initVC = TabBarViewController()
+        window?.rootViewController = initVC
+        
         coloredNavBarAppearance.configureWithOpaqueBackground()
         coloredNavBarAppearance.backgroundColor = background_color
         coloredNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -30,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         FirebaseApp.configure()
-        self.window?.makeKeyAndVisible()
+        
         
         return true
     }
